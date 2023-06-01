@@ -32,7 +32,7 @@ Data type to specify state name. Based on data type `string`.
 |-----------|-----------------------------|-----------------------------------------------------------------------|
 | Ctx       | context.Context             | Go context                                                            |
 | UserCtx   | any                         | User context. Used in `data handlers` to operate with any user's data |
-| States    | map[[fsm.StateName](#type-fsmstatename)][fsm.State](struct-fsmstate) | Machine states description                                            |
+| States    | map[[fsm.StateName](#type-fsmstatename)][fsm.State](#struct-fsmstate) | Machine states description                                            |
 | InitState | [fsm.StateName](#type-fsmstatename)               | State used by the machine as an initial state                         |
 
 #### Struct `fsm.State`
