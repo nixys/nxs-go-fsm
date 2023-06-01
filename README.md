@@ -32,21 +32,21 @@ Data type to specify state name. Based on data type `string`.
 |-----------|-----------------------------|-----------------------------------------------------------------------|
 | Ctx       | context.Context             | Go context                                                            |
 | UserCtx   | any                         | User context. Used in `data handlers` to operate with any user's data |
-| States    | map[fsm.StateName]fsm.State | Machine states description                                            |
-| InitState | fsm.StateName               | State used by the machine as an initial state                         |
+| States    | map[[fsm.StateName](#type-fsmstatename)][fsm.State](struct-fsmstate) | Machine states description                                            |
+| InitState | [fsm.StateName](#type-fsmstatename)               | State used by the machine as an initial state                         |
 
 #### Struct `fsm.State`
 
 | Field      | Type            | Description                                                                        |
 |------------|-----------------|------------------------------------------------------------------------------------|
-| NextStates | []fsm.NextState | Set of next states. May be empty, in this case machine will never change its state |
+| NextStates | [][fsm.NextState](#struct-fsmnextstate) | Set of next states. May be empty, in this case machine will never change its state |
 
 #### Struct `fsm.NextState`
 
 | Field       | Type                                                     | Description                                |
 |-------------|----------------------------------------------------------|--------------------------------------------|
-| Name        | fsm.StateName                                            | Name of the next state                     |
-| Switch      | fsm.Switch                                               | Conditions to select the next state        |
+| Name        | [fsm.StateName](#type-fsmstatename)                      | Name of the next state                     |
+| Switch      | [fsm.Switch](#struct-fsmswitch)                          | Conditions to select the next state        |
 | DataHandler | func(userCtx any, data, trigger []byte) ([]byte, error)  | Function to be called (if not nil) if switch conditions are match. Within the function you are able to use `user context` specified at init, `data` (all bytes read from the stream since the machine was put into this state) and `trigger` (token from the data flow that switched machine to next state). Function returns a bytes to be write into output buffer           |
 
 #### Struct `fsm.Switch`
@@ -54,7 +54,7 @@ Data type to specify state name. Based on data type `string`.
 | Field      | Type            | Description                                |
 |------------|-----------------|--------------------------------------------|
 | Trigger    | []byte          | Bytes sequence in a data flow that switches machine in the specified state. To be trigger is considered matched a conditions described in lines below in this table must be met                          |
-| Delimiters | fsm.Delimiters  | Right and left trigger delimiters. The trigger is considered matched if the specified delimiters are present around the trigger. Delimiters can be empty, in this case trigger may has any bytes arounded    |
+| Delimiters | [fsm.Delimiters](#struct-fsmdelimiters)  | Right and left trigger delimiters. The trigger is considered matched if the specified delimiters are present around the trigger. Delimiters can be empty, in this case trigger may has any bytes arounded    |
 | Escape     | bool            | Set trigger sensitive to escape character '\'. If true a trigger is considered matched only if preceding character is not a '\' (or even number of this character). Works in conjunction with delimiters    |
 
 #### Struct `fsm.Delimiters`
@@ -225,3 +225,7 @@ _Some other following data_
 ```
 
 **For more examples see apps based on this library: _coming soon_**
+
+## License
+
+Nixys Flow State Machine library is released under the [MIT License](LICENSE).
