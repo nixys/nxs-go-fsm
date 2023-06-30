@@ -8,13 +8,13 @@ An `io.Reader` (`fsm.Reader` further in the text) you will get after initialize 
 
 At any point of time `fsm.Reader` is in one of specified states. Every state has a set of next states. When `trigger` (token) for one of the next state is encountered in the data flow and all conditions (described in `switch`) are match, `data handler` for this next state will be called and machine will be switched to.
 
-## Import
+## Quickstart
+
+### Import
 
 ```go
 import fsm "github.com/nixys/nxs-go-fsm"
 ```
-
-## Description of usage
 
 ### Initialize
 
@@ -226,6 +226,12 @@ _Some other following data_
 
 **For more examples see apps based on this library:**
 - [Nixys Data Anonymizer](https://github.com/nixys/nxs-data-anonymizer)
+
+## Feedback
+
+For support and feedbak please contact me:
+- telegram: [@borisershov](https://t.me/borisershov)
+- e-mail: b.ershov@nixys.ru
 
 ## License
 
