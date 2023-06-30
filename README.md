@@ -224,7 +224,8 @@ COPY public.comments (id, comment) FROM stdin;
 _Some other following data_
 ```
 
-**For more examples see apps based on this library: _coming soon_**
+**For more examples see apps based on this library:**
+- [Nixys Data Anonymizer](https://github.com/nixys/nxs-data-anonymizer)
 
 ## License
 
