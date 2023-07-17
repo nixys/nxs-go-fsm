@@ -229,7 +229,7 @@ _Some other following data_
 
 ## Feedback
 
-For support and feedbak please contact me:
+For support and feedbaсk please contact me:
 - telegram: [@borisershov](https://t.me/borisershov)
 - e-mail: b.ershov@nixys.ru
 
