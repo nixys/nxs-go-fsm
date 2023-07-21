@@ -1,6 +1,6 @@
-# Nixys Flow State Machine library
+# nxs-go-fsm
 
-Nixys Flow State Machine is the library for Golang implements [Finite-state machine](https://en.wikipedia.org/wiki/Finite-state_machine) principles for the data flow.
+Golang library nxs-go-fsm implements [Finite-state machine](https://en.wikipedia.org/wiki/Finite-state_machine) principles for the data flow.
 
 ## Introduction
 
@@ -18,7 +18,7 @@ import fsm "github.com/nixys/nxs-go-fsm"
 
 ### Initialize
 
-You need to initialize this library via `Init(r io.Reader, desc fsm.Description)` function before using. After that you will get a `fsm.Reader` reader. Via this reader you'll get a modified data in accordance with described states. To describe a Nixys Flow State Machine you need to determine following options:
+You need to initialize this library via `Init(r io.Reader, desc fsm.Description)` function before using. After that you will get a `fsm.Reader` reader. Via this reader you'll get a modified data in accordance with described states. To describe a nxs-go-fsm you need to determine following options:
 - `r`: any `io.Reader` you wish to read data from
 - `desc`: struct to describe a states and contexts. See below for details.
 
@@ -225,7 +225,7 @@ _Some other following data_
 ```
 
 **For more examples see apps based on this library:**
-- [Nixys Data Anonymizer](https://github.com/nixys/nxs-data-anonymizer)
+- [nxs-data-anonymizer](https://github.com/nixys/nxs-data-anonymizer)
 
 ## Feedback
 
@@ -235,4 +235,4 @@ For support and feedbaсk please contact me:
 
 ## License
 
-Nixys Flow State Machine library is released under the [MIT License](LICENSE).
+nxs-go-fsm is released under the [MIT License](LICENSE).
